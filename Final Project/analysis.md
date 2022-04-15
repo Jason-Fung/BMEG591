@@ -1,21 +1,5 @@
 BMEG591 Final Project
 ================
-Ariel Huynh and Jason Fung
-April 14, 2022
-
--   [Introduction](#introduction)
--   [Methods and Results](#methods-and-results)
-    -   [Data Retrieval](#data-retrieval)
-    -   [Quality Control: FastQC](#quality-control-fastqc)
-    -   [Index Builds and Alignment](#index-builds-and-alignment)
-    -   [Pre-Processing of Mapped
-        Reads](#pre-processing-of-mapped-reads)
-    -   [Creating Bigwig files for IGV](#creating-bigwig-files-for-igv)
-    -   [Peak Calling and Distribution](#peak-calling-and-distribution)
--   [Discussion](#discussion)
--   [Contributions](#contributions)
--   [Acknoledgements](#acknoledgements)
--   [References](#references)
 
 # Introduction
 
@@ -445,14 +429,14 @@ mono_tagMatrix <- getTagMatrix(peak = peaks_data$mono_data,
                           by = "gene")
 ```
 
-    ## >> preparing start_site regions by gene... 2022-04-14 10:18:43 PM
-    ## >> preparing tag matrix...  2022-04-14 10:18:43 PM
+    ## >> preparing start_site regions by gene... 2022-04-14 10:07:48 PM
+    ## >> preparing tag matrix...  2022-04-14 10:07:48 PM
 
 ``` r
 mono_plot <- plotAvgProf(tagMatrix = mono_tagMatrix, xlim = c(-3000,3000),)
 ```
 
-    ## >> plotting figure...             2022-04-14 10:18:53 PM
+    ## >> plotting figure...             2022-04-14 10:07:59 PM
 
 ``` r
 # for dikaryon
@@ -464,14 +448,14 @@ di_tagMatrix <- getTagMatrix(peak = peaks_data$di_data,
                           by = "gene")
 ```
 
-    ## >> preparing start_site regions by gene... 2022-04-14 10:18:53 PM
-    ## >> preparing tag matrix...  2022-04-14 10:18:53 PM
+    ## >> preparing start_site regions by gene... 2022-04-14 10:07:59 PM
+    ## >> preparing tag matrix...  2022-04-14 10:07:59 PM
 
 ``` r
 dikary_plot <- plotAvgProf(tagMatrix = di_tagMatrix, xlim = c(-3000,3000))
 ```
 
-    ## >> plotting figure...             2022-04-14 10:19:00 PM
+    ## >> plotting figure...             2022-04-14 10:08:06 PM
 
 ``` r
 mono_data <- mono_plot$data
@@ -543,18 +527,5 @@ creation of an ENCODE blacklist requires a significant amount of input
 data and a significant amount of RAM and disk storage based on the size
 of the genome analyzed and the number of input data files being
 processed.
-
-# Contributions
-
-Ariel Huynh wrote the introduction and part of the discussion; Jason
-Fung wrote part of the methods and part of the discussion. Computational
-work was split 50/50, where Ariel performed the alignment and filtering
-sam -\> bam files and Jason did the ChIP peak distribution and IGV
-visualizations.
-
-# Acknoledgements
-
-We would like to thank Drs. Peter Jan Vonk & Robin A. Ohm for their help
-with providing us the reference genome files and gene annotation file.
 
 # References
