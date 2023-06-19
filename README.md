@@ -1,1 +1,1 @@
-# BMEG591
+# Repository for BMEG 591 - Genome Informatics
